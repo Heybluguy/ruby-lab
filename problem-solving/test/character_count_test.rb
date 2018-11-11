@@ -1,9 +1,12 @@
-require_relative "test_helper"
-require "./lib/character_count"
+require 'minitest'
+require 'minitest/autorun'
+require 'minitest/pride'
+require "./problem-solving/lib/character_count"
 
 class CharacterCountTest < Minitest::Test
 
   def test_it_can_count_a_small_word
+
     cc = CharacterCount.new
 
     result = cc.count("test")
@@ -13,6 +16,7 @@ class CharacterCountTest < Minitest::Test
   end
 
   def test_it_can_count_another_word
+
     cc = CharacterCount.new
 
     result = cc.count("pterodactyl")
@@ -22,6 +26,7 @@ class CharacterCountTest < Minitest::Test
   end
 
   def test_it_can_count_spaces
+
     cc = CharacterCount.new
 
     result = cc.count(" ")
@@ -31,6 +36,7 @@ class CharacterCountTest < Minitest::Test
   end
 
   def test_it_can_handle_sentences
+
     cc = CharacterCount.new
 
     result = cc.count("hello world")

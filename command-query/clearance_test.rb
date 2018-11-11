@@ -12,7 +12,7 @@ class ClearanceTest < Minitest::Test
   end
 
   def test_highest_percent_off_with_one_item
-    skip
+    # skip
     clearance = Clearance.new
     clearance << Item.new("socks", price: 5, discount: 1)
     assert_equal "socks", clearance.best_deal

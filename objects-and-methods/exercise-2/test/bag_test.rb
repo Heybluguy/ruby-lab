@@ -1,8 +1,8 @@
 gem 'minitest', '~> 5.2'
 require 'minitest/autorun'
 require 'minitest/pride'
-require_relative '../lib/bag'
-require_relative '../lib/candy'
+require './lib/bag'
+require './lib/candy'
 
 class BagTest < Minitest::Test
   def test_a_new_bag_is_empty
@@ -108,4 +108,3 @@ class BagTest < Minitest::Test
     assert_equal "Lifesavers", candy.first.type
   end
 end
-
