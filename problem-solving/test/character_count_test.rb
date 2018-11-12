@@ -1,7 +1,5 @@
-require 'minitest'
-require 'minitest/autorun'
-require 'minitest/pride'
-require "./problem-solving/lib/character_count"
+require_relative "test_helper"
+require "./lib/character_count"
 
 class CharacterCountTest < Minitest::Test
 
