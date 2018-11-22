@@ -1,6 +1,6 @@
 class Hobbit
   attr_reader :name, :age, :disposition
-  
+
   def initialize(name, disposition = "homebody")
     @name = name
     @disposition = disposition
