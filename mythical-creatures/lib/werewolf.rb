@@ -26,5 +26,6 @@ class Werewolf
   end
 
   def hungry?
+    wolf? == true ? true : false
   end
 end
