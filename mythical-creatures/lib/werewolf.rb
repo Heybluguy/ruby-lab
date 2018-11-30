@@ -28,4 +28,8 @@ class Werewolf
   def hungry?
     wolf? == true ? true : false
   end
+
+  def consume!(food)
+    food if @human == false
+  end
 end
