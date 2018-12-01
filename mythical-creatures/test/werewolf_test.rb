@@ -104,7 +104,6 @@ class WerewolfTest < Minitest::Test
 
   def test_a_werewolf_who_has_consumed_a_victim_makes_the_victim_dead
     # skip
-
     werewolf = Werewolf.new("Quill", "Earth")
     victim = Victim.new
     werewolf.change!

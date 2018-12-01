@@ -28,5 +28,5 @@ class Werewolf
     victim.status = :dead
     @consume = true if @human == false
   end
-  
+
 end
