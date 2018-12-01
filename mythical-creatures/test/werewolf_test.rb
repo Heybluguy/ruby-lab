@@ -80,24 +80,37 @@ class WerewolfTest < Minitest::Test
     werewolf = Werewolf.new("Quill", "Earth")
     victim = Victim.new
     werewolf.change!
-    assert_equal victim, werewolf.consume!(victim)
+
+    assert werewolf.consume!(victim)
   end
 
   def test_cannot_consume_victim_if_in_human_form
     # skip
     werewolf = Werewolf.new("Quill", "Earth")
     victim = Victim.new
+
     refute werewolf.consume!(victim)
   end
 
   def test_a_werewolf_who_has_consumed_a_victim_is_no_longer_hungry
-    skip
-    # your code here
+    # skip
+    werewolf = Werewolf.new("Quill", "Earth")
+    victim = Victim.new
+    werewolf.change!
+    werewolf.consume!(victim)
+
+    refute werewolf.hungry?
   end
 
   def test_a_werewolf_who_has_consumed_a_victim_makes_the_victim_dead
-    skip
-    # your code here
+    # skip
+
+    werewolf = Werewolf.new("Quill", "Earth")
+    victim = Victim.new
+    werewolf.change!
+    werewolf.consume!(victim)
+
+    assert_equal victim.status, :dead
   end
 
 end

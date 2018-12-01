@@ -1,16 +1,11 @@
 class Werewolf
+  attr_reader :name, :location
+
   def initialize(name, location = "London")
     @name = name
     @location = location
     @human = true
-  end
-
-  def name
-    @name
-  end
-
-  def location
-    @location
+    @consume = false
   end
 
   def human?
@@ -26,10 +21,12 @@ class Werewolf
   end
 
   def hungry?
-    wolf? == true ? true : false
+    wolf? == true  && @consume == false ? true : false
   end
 
-  def consume!(food)
-    food if @human == false
+  def consume!(victim)
+    victim.status = :dead
+    @consume = true if @human == false
   end
+  
 end
