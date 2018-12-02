@@ -10,29 +10,11 @@ class Centaur
   end
 
   def shoot
-    if !laying?
-      if cranky? == false
-        @energy -= 1
-        "Twang!!!"
-      else
-        "NO!"
-      end
-    else
-      "NO!"
-    end
+    !laying? ? (cranky? == false ? activity("Twang!!!") : "NO!") : "NO!"
   end
 
   def run
-    if !laying?
-      if cranky? == false
-        @energy -= 1
-        "Clop clop clop clop!!!"
-      else
-        "NO!"
-      end
-    else
-      "NO!"
-    end
+    !laying? ? (cranky? == false ? activity("Clop clop clop clop!!!") : "NO!") : "NO!"
   end
 
   def cranky?
@@ -62,11 +44,7 @@ class Centaur
 
   def drink_potion
     @sick = true if rested? == true
-    if @standing == true
-      @rested = true
-    else
-      "NO!"
-    end
+    @standing == true ? @rested = true : "NO!"
   end
 
   def rested?
@@ -76,4 +54,10 @@ class Centaur
   def sick?
     @sick
   end
+
+  def activity(sound)
+    @energy -= 1
+    sound
+  end
+  
 end
