@@ -4,26 +4,26 @@ require 'minitest/pride'
 
 class ArrayTest < Minitest::Test
   def test_empty
-    assert_equal __, [].empty?
-    assert_equal __, [1,2,3].empty?
+    assert_equal true, [].empty?
+    assert_equal false, [1,2,3].empty?
   end
 
   def test_first
-    skip
-    assert_equal __, [].first
-    assert_equal __, [:a, :b, :c].first
-    assert_equal __, ["spoon"].first
+    # skip
+    assert_nil [].first
+    assert_equal :a, [:a, :b, :c].first
+    assert_equal "spoon", ["spoon"].first
   end
 
   def test_last
-    skip
-    assert_equal __, [].last
-    assert_equal __, [:a, :b, :c].last
-    assert_equal __, ["spoon"].last
+    # skip
+    assert_nil [].last
+    assert_equal :c, [:a, :b, :c].last
+    assert_equal "spoon", ["spoon"].last
   end
 
   def test_access
-    skip
+    # skip
     assert_equal __, [][0]
     assert_equal __, ["a", "b", "c"][0]
     assert_equal __, ["a", "b", "c"][1]
