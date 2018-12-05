@@ -24,33 +24,33 @@ class ArrayTest < Minitest::Test
 
   def test_access
     # skip
-    assert_equal __, [][0]
-    assert_equal __, ["a", "b", "c"][0]
-    assert_equal __, ["a", "b", "c"][1]
-    assert_equal __, ["a", "b", "c"][-1]
-    assert_equal __, ["a", "b", "c"][-2]
-    assert_equal __, ["a", "b", "c"][4]
+    assert_nil [][0]
+    assert_equal "a", ["a", "b", "c"][0]
+    assert_equal "b", ["a", "b", "c"][1]
+    assert_equal "c", ["a", "b", "c"][-1]
+    assert_equal "b", ["a", "b", "c"][-2]
+    assert_nil ["a", "b", "c"][4]
   end
 
   def test_index
-    skip
-    assert_equal __, ["a", "b", "c"].index("a")
-    assert_equal __, ["a", "b", "c"].index("b")
-    assert_equal __, ["a", "b", "c"].index("c")
-    assert_equal __, ["a", "b", "c"].index("d")
+    # skip
+    assert_equal 0, ["a", "b", "c"].index("a")
+    assert_equal 1, ["a", "b", "c"].index("b")
+    assert_equal 2, ["a", "b", "c"].index("c")
+    assert_nil ["a", "b", "c"].index("d")
   end
 
   def test_join
-    skip
-    assert_equal __, [].join
-    assert_equal __, [].join(' ')
-    assert_equal __, [].join(' - ')
-    assert_equal __, [].join(' and ')
-    assert_equal __, ["a", "b", "c"].join
-    assert_equal __, ["a", "b", "c"].join("")
-    assert_equal __, ["a", "b", "c"].join(" ")
-    assert_equal __, ["a", "b", "c"].join(" - ")
-    assert_equal __, ["a", "b", "c"].join(" and ")
+    # skip
+    assert_equal "", [].join
+    assert_equal "", [].join(' ')
+    assert_equal "", [].join(' - ')
+    assert_equal "", [].join(' and ')
+    assert_equal "abc", ["a", "b", "c"].join
+    assert_equal "abc", ["a", "b", "c"].join("")
+    assert_equal "a b c", ["a", "b", "c"].join(" ")
+    assert_equal "a - b - c", ["a", "b", "c"].join(" - ")
+    assert_equal "a and b and c", ["a", "b", "c"].join(" and ")
   end
 
   def test_length
